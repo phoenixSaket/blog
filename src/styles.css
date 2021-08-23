@@ -48,10 +48,19 @@
   padding: 10px;
   background-color: var(--background);
   flex-direction: column;
+  z-index: 9999;
 }
 
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.pointer {
+  cursor: pointer;
 }

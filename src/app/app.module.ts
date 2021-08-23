@@ -9,6 +9,8 @@ import { InputComponent } from './shared/input/input.component';
 import { WaveComponent } from './shared/wave/wave.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BloggerComponent } from './Components/blogger/blogger.component';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { BlogComponent } from './Components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { BloggerComponent } from './Components/blogger/blogger.component';
     CreateAccountComponent,
     InputComponent,
     WaveComponent,
-    BloggerComponent
+    BloggerComponent,
+    NavbarComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

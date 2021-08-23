@@ -1,3 +1,21 @@
-<p>blogger works!</p>
+<app-wave></app-wave>
 
-<button class="btn btn-primary" (click)="clear()">Clear</button>
+<div class="home-container">
+  <app-navbar [name]="this.userData.name"></app-navbar>
+  <div class="blogs-container">
+    <!-- {{ blogs | json }} -->
+    <div *ngFor="let blog of blogs">
+      <app-blog [blog]="blog"></app-blog>
+    </div>
+  </div>
+  <div class="private-header bold center" *ngIf="privateBlogs.length > 0">
+    Private Blogs
+  </div>
+  <div class="blogs-container" *ngIf="privateBlogs.length > 0">
+    <div *ngFor="let blog of privateBlogs">
+      <app-blog [blog]="blog"></app-blog>
+    </div>
+  </div>
+  <button class="create-btn btn btn-secondary">Write a blog</button>
+</div>
+

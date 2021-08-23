@@ -10,6 +10,7 @@ export class LoginServiceService {
   loginObservable: Observable<any>;
   private httpLoginUrl = 'http://localhost:8000/api/login/';
   private httpCreateAccountUrl = 'http://localhost:8000/api/addUser/';
+  private httpUrl = 'http://localhost:8000';
   private id: number = 0;
 
   constructor(http: HttpClient) {
@@ -33,10 +34,23 @@ export class LoginServiceService {
       email: email,
       password: password,
       isOnline: 1,
-      lastLoggedOut: 0,
+      lastLoggedOut: null,
     };
 
     return this.http.post(this.httpCreateAccountUrl, { user: user });
+  }
+
+  public getUser(): Observable<any> {
+    let api = '/api/getUser';
+    let id = this.getId();
+
+    return this.http.post(this.httpUrl + api, { id: id });
+  }
+
+  public getBlogs(): Observable<any> {
+    let api = '/api/getBlogs';
+    let id = this.getId();
+    return this.http.post(this.httpUrl + api, { id: id });
   }
 
   public setId(id: number) {
