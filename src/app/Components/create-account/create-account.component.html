@@ -1,1 +1,42 @@
-<p>create-account works!</p>
+<div class="container center">
+  <div class="input-container shadow">
+    <app-input
+      type="text"
+      value=""
+      place="Name"
+      (change)="getValue('name', $event)"
+    ></app-input>
+  </div>
+  <div class="input-container shadow">
+    <app-input
+      type="text"
+      value=""
+      place="Username"
+      (change)="getValue('username', $event)"
+    ></app-input>
+  </div>
+  <div class="input-container shadow">
+    <app-input
+      type="email"
+      value=""
+      place="Email"
+      (change)="getValue('email', $event)"
+    ></app-input>
+  </div>
+  <div class="input-container shadow">
+    <app-input
+      type="password"
+      value=""
+      place="Password"
+      (change)="getValue('password', $event)"
+    ></app-input>
+  </div>
+  <div class="button-container">
+    <button class="btn btn-secondary shadow" routerLink="/">Back</button>
+    <button class="btn btn-primary shadow" (click)="createAccount()">
+      Create Account
+    </button>
+  </div>
+</div>
+
+<app-wave></app-wave>

@@ -7,5 +7,5 @@
 }
 
 ::placeholder {
-    color: black;
+    color: var(--black);
 }

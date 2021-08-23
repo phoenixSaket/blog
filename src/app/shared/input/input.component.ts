@@ -22,7 +22,6 @@ export class InputComponent implements OnInit {
   }
 
   valueChanged(event: any) {
-    console.log("Value : ", event.target.value);
     this.change.emit(event.target.value);
   }
 }
