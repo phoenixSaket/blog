@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BloggerComponent } from './Components/blogger/blogger.component';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { BlogComponent } from './Components/blog/blog.component';
+import { WriteBlogComponent } from './Components/write-blog/write-blog.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BlogComponent } from './Components/blog/blog.component';
     WaveComponent,
     BloggerComponent,
     NavbarComponent,
-    BlogComponent
+    BlogComponent,
+    WriteBlogComponent
   ],
   imports: [
     BrowserModule,

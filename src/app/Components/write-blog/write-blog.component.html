@@ -1,0 +1,49 @@
+<div class="write-container shadow">
+  <div class="top-container">
+    <div class="title">Care to write your thoughts, {{ name }} ?</div>
+    <button class="btn-close" (click)="closePopup()">Close</button>
+  </div>
+  <div class="inner-container">
+    <div class="content">
+      <div class="input">
+        <app-input
+          type="text"
+          value=""
+          place="Title"
+          class="bold"
+          (change)="getValue('title', $event)"
+        ></app-input>
+      </div>
+      <div class="input">
+        <app-input
+          type="text"
+          value=""
+          place="Subtitle"
+          class="bold"
+          (change)="getValue('subtitle', $event)"
+        ></app-input>
+      </div>
+      <textarea
+        class="text-content"
+        placeholder="Your content here ..."
+      ></textarea>
+    </div>
+    <div class="display">
+      <div class="display-title"></div>
+      <div class="display-subtitle"></div>
+      <div class="display-content"></div>
+    </div>
+  </div>
+  <div class="controls">
+    <div class="bold">B</div>
+    <div><i>I</i></div>
+    <div><u>U</u></div>
+    <div class="private">
+      <span>Private</span>
+    </div>
+    <div class="add-image">
+      <input type="file" />
+    </div>
+    <button class="btn btn-primary">Add Blog</button>
+  </div>
+</div>

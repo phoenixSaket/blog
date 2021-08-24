@@ -12,13 +12,12 @@ export class BloggerComponent implements OnInit {
   public userData: any = {};
   public blogs: any = [];
   public privateBlogs: any = [];
+  public showWriteBlog: boolean = false;
 
   ngOnInit(): void {
     this.loginService.getUser().subscribe(
       (data) => {
-        // console.log('Success : ', data);
         this.userData = data;
-        console.log('Success : ', this.userData);
       },
       (err) => {
         console.log('Error : ', err);
@@ -27,7 +26,6 @@ export class BloggerComponent implements OnInit {
 
     this.loginService.getBlogs().subscribe(
       (data) => {
-        console.log('Success', data);
         this.blogs = data.blogs;
         this.privateBlogs = data.privateBlogs;
       },
@@ -35,5 +33,11 @@ export class BloggerComponent implements OnInit {
         console.log('Error', err);
       }
     );
+  }
+
+  closePopup(event: boolean) {
+    if (event) {
+      this.showWriteBlog = !this.showWriteBlog;
+    }
   }
 }

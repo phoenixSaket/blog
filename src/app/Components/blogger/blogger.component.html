@@ -16,6 +16,16 @@
       <app-blog [blog]="blog"></app-blog>
     </div>
   </div>
-  <button class="create-btn btn btn-secondary">Write a blog</button>
+  <button
+    *ngIf="!showWriteBlog"
+    class="create-btn btn btn-secondary"
+    (click)="showWriteBlog = !showWriteBlog"
+  >
+    Write a blog
+  </button>
+  <app-write-blog
+    *ngIf="showWriteBlog"
+    [name]="this.userData.name"
+    (close)="closePopup($event)"
+  ></app-write-blog>
 </div>
-
