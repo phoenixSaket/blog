@@ -1,5 +1,13 @@
 <div class="navbar-container">
-  <span class="pointer" (click)="clear()"
-    >Welcome <span class="bold">{{ name }}</span></span
-  >
+  <div class="logout-container">
+    <span
+      >Welcome <span class="bold">{{ name }}</span></span
+    >
+    <img
+      src="/assets/logout.png"
+      alt="logout"
+      class="logout pointer"
+      (click)="clear()"
+    />
+  </div>
 </div>

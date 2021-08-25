@@ -18,6 +18,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .title,
@@ -65,4 +66,15 @@ img.image {
 .content {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.heart {
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
+}
+
+.likes {
+  display: flex;
+  align-items: center;
 }

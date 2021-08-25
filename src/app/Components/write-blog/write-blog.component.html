@@ -25,25 +25,38 @@
       </div>
       <textarea
         class="text-content"
+        id="content"
         placeholder="Your content here ..."
+        (keyup)="changeText($event)"
+        (select)="selctionChange()"
+        (click)="selctionChange()"
       ></textarea>
     </div>
     <div class="display">
-      <div class="display-title"></div>
-      <div class="display-subtitle"></div>
-      <div class="display-content"></div>
+      <div class="display-title center">{{ title }}</div>
+      <div class="display-subtitle center">{{ subtitle }}</div>
+      <div class="display-content">
+        <span [(innerHTML)]="string"></span>
+      </div>
     </div>
   </div>
   <div class="controls">
-    <div class="bold">B</div>
-    <div><i>I</i></div>
-    <div><u>U</u></div>
-    <div class="private">
-      <span>Private</span>
+    <div class="pointer" id="b" (click)="styleClicked('bold')"><b>B</b></div>
+    <div class="pointer" id="i" (click)="styleClicked('italic')"><i>I</i></div>
+    <div class="pointer" id="u" (click)="styleClicked('underline')">
+      <u>U</u>
+    </div>
+    <div class="private pointer" (click)="toggle = !toggle">
+      <span [ngClass]="toggle ? '' : 'red'">Private &nbsp;&nbsp;</span>
+      <img
+        [src]="toggle ? '/assets/toggle_on.png' : '/assets/toggle_off.png'"
+        alt="toggle"
+        class="toggle"
+      />
     </div>
     <div class="add-image">
       <input type="file" />
     </div>
-    <button class="btn btn-primary">Add Blog</button>
+    <button class="btn btn-add">Add Blog</button>
   </div>
 </div>

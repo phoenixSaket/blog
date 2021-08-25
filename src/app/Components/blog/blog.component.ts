@@ -19,16 +19,13 @@ export class BlogComponent implements OnInit {
   ngOnInit(): void {
     this.title = this.blog.title;
     this.subtitle = this.blog.subtitle;
-    
-    console.log(this.blog.content);
-    this.blog.content = this.blog.content.replaceAll("class='image'", "width = 100%" );
-    console.log(this.blog.content);
-
+    this.blog.content = this.blog.content.replaceAll(
+      "class='image'",
+      'width = 100%'
+    );
     this.content = this.blog.content;
-
     this.likes = this.blog.likes;
     this.date = this.blog.date;
-
     let images = document.getElementsByClassName('image');
 
     setTimeout(() => {

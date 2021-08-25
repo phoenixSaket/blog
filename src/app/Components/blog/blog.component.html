@@ -3,7 +3,10 @@
   <div class="subtitle">{{ subtitle }}</div>
   <div class="content"><span [innerHTML]="content"></span></div>
   <div class="footer">
-    <div class="likes"><span class="bold">Likes : </span>{{ likes }}</div>
+    <div class="likes">
+      <img src="/assets/heart_blank.png" alt="heart" class="heart" />
+      {{ likes }}
+    </div>
     <div class="date">{{ date }}</div>
   </div>
 </div>

@@ -13,6 +13,8 @@ export class WriteBlogComponent implements OnInit {
   public subtitle: string = '';
   public content: string = '';
   public isPrivate: boolean = false;
+  public string: string = '';
+  public toggle: boolean = false;
 
   constructor() {}
 
@@ -37,12 +39,14 @@ export class WriteBlogComponent implements OnInit {
     this.close.emit(true);
   }
 
+  changeText(event) {
+    this.string = event.target.value;
+  }
+
   styleClicked(style) {
     let content = <HTMLInputElement>document.getElementById('content');
-
     let selection = '';
     let string = '';
-
     let key = '';
 
     switch (style) {
@@ -77,7 +81,7 @@ export class WriteBlogComponent implements OnInit {
         content.value.substring(content.selectionStart, content.selectionEnd) +
         '' +
         content.value.substring(content.selectionEnd + 4, content.value.length);
-      // setData(string);
+      this.string = string;
     } else {
       selection =
         '<' +
@@ -92,7 +96,7 @@ export class WriteBlogComponent implements OnInit {
         content.value.substring(0, content.selectionStart) +
         selection +
         content.value.substring(content.selectionEnd, content.value.length);
-      // setData(string);
+      this.string = string;
     }
 
     (<HTMLInputElement>document.getElementById('content')).value = string;
